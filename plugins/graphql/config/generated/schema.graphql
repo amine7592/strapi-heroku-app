@@ -1,9 +1,25 @@
-input createPostInput {
-  data: PostInput
+input createOrderInput {
+  data: OrderInput
 }
 
-type createPostPayload {
-  post: Post
+type createOrderPayload {
+  order: Order
+}
+
+input createProductInput {
+  data: ProductInput
+}
+
+type createProductPayload {
+  product: Product
+}
+
+input createRestaurantInput {
+  data: RestaurantInput
+}
+
+type createRestaurantPayload {
+  restaurant: Restaurant
 }
 
 input createRoleInput {
@@ -12,14 +28,6 @@ input createRoleInput {
 
 type createRolePayload {
   role: UsersPermissionsRole
-}
-
-input createTagInput {
-  data: TagInput
-}
-
-type createTagPayload {
-  tag: Tag
 }
 
 input createUserInput {
@@ -35,12 +43,28 @@ The `DateTime` scalar represents a date and time following the ISO 8601 standard
 """
 scalar DateTime
 
-input deletePostInput {
+input deleteOrderInput {
   where: InputID
 }
 
-type deletePostPayload {
-  post: Post
+type deleteOrderPayload {
+  order: Order
+}
+
+input deleteProductInput {
+  where: InputID
+}
+
+type deleteProductPayload {
+  product: Product
+}
+
+input deleteRestaurantInput {
+  where: InputID
+}
+
+type deleteRestaurantPayload {
+  restaurant: Restaurant
 }
 
 input deleteRoleInput {
@@ -49,14 +73,6 @@ input deleteRoleInput {
 
 type deleteRolePayload {
   role: UsersPermissionsRole
-}
-
-input deleteTagInput {
-  where: InputID
-}
-
-type deleteTagPayload {
-  tag: Tag
 }
 
 input deleteUserInput {
@@ -89,15 +105,18 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Post | createPostPayload | updatePostPayload | deletePostPayload | PostConnection | PostAggregator | PostGroupBy | PostConnection_id | PostConnectionCreatedAt | PostConnectionUpdatedAt | PostConnectionTitle | PostConnectionContent | PostConnectionCover | Tag | createTagPayload | updateTagPayload | deleteTagPayload | TagConnection | TagAggregator | TagGroupBy | TagConnection_id | TagConnectionCreatedAt | TagConnectionUpdatedAt | TagConnectionName | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Order | createOrderPayload | updateOrderPayload | deleteOrderPayload | OrderConnection | OrderAggregator | OrderAggregatorSum | OrderAggregatorAvg | OrderAggregatorMin | OrderAggregatorMax | OrderGroupBy | OrderConnection_id | OrderConnectionCreatedAt | OrderConnectionUpdatedAt | OrderConnectionRestaurant | OrderConnectionTotale | Product | createProductPayload | updateProductPayload | deleteProductPayload | ProductConnection | ProductAggregator | ProductAggregatorSum | ProductAggregatorAvg | ProductAggregatorMin | ProductAggregatorMax | ProductGroupBy | ProductConnection_id | ProductConnectionCreatedAt | ProductConnectionUpdatedAt | ProductConnectionName | ProductConnectionAvailable | ProductConnectionPrice | ProductConnectionOrder | Restaurant | createRestaurantPayload | updateRestaurantPayload | deleteRestaurantPayload | RestaurantConnection | RestaurantAggregator | RestaurantAggregatorSum | RestaurantAggregatorAvg | RestaurantAggregatorMin | RestaurantAggregatorMax | RestaurantGroupBy | RestaurantConnection_id | RestaurantConnectionCreatedAt | RestaurantConnectionUpdatedAt | RestaurantConnectionName | RestaurantConnectionAddress | RestaurantConnectionMin_order | RestaurantConnectionImage | RestaurantConnectionOrder | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
 
 type Mutation {
-  createPost(input: createPostInput): createPostPayload
-  updatePost(input: updatePostInput): updatePostPayload
-  deletePost(input: deletePostInput): deletePostPayload
-  createTag(input: createTagInput): createTagPayload
-  updateTag(input: updateTagInput): updateTagPayload
-  deleteTag(input: deleteTagInput): deleteTagPayload
+  createOrder(input: createOrderInput): createOrderPayload
+  updateOrder(input: updateOrderInput): updateOrderPayload
+  deleteOrder(input: deleteOrderInput): deleteOrderPayload
+  createProduct(input: createProductInput): createProductPayload
+  updateProduct(input: updateProductInput): updateProductPayload
+  deleteProduct(input: deleteProductInput): deleteProductPayload
+  createRestaurant(input: createRestaurantInput): createRestaurantPayload
+  updateRestaurant(input: updateRestaurantInput): updateRestaurantPayload
+  deleteRestaurant(input: deleteRestaurantInput): deleteRestaurantPayload
 
   """Create a new role"""
   createRole(input: createRoleInput): createRolePayload
@@ -113,79 +132,186 @@ type Mutation {
   upload(refId: ID, ref: String, source: String, file: Upload!): UploadFile!
 }
 
-type Post {
+type Order {
   _id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
-  title: String
-  content: String
-  cover: UploadFile
-  tags(sort: String, limit: Int, start: Int, where: JSON): [Tag]
+  restaurant: Restaurant
+  totale: Float
+  products(sort: String, limit: Int, start: Int, where: JSON): [Product]
 }
 
-type PostAggregator {
+type OrderAggregator {
   count: Int
+  sum: OrderAggregatorSum
+  avg: OrderAggregatorAvg
+  min: OrderAggregatorMin
+  max: OrderAggregatorMax
 }
 
-type PostConnection {
-  values: [Post]
-  groupBy: PostGroupBy
-  aggregate: PostAggregator
+type OrderAggregatorAvg {
+  totale: Float
 }
 
-type PostConnection_id {
+type OrderAggregatorMax {
+  totale: Float
+}
+
+type OrderAggregatorMin {
+  totale: Float
+}
+
+type OrderAggregatorSum {
+  totale: Float
+}
+
+type OrderConnection {
+  values: [Order]
+  groupBy: OrderGroupBy
+  aggregate: OrderAggregator
+}
+
+type OrderConnection_id {
   key: ID
-  connection: PostConnection
+  connection: OrderConnection
 }
 
-type PostConnectionContent {
-  key: String
-  connection: PostConnection
+type OrderConnectionCreatedAt {
+  key: DateTime
+  connection: OrderConnection
 }
 
-type PostConnectionCover {
+type OrderConnectionRestaurant {
   key: ID
-  connection: PostConnection
+  connection: OrderConnection
 }
 
-type PostConnectionCreatedAt {
+type OrderConnectionTotale {
+  key: Float
+  connection: OrderConnection
+}
+
+type OrderConnectionUpdatedAt {
   key: DateTime
-  connection: PostConnection
+  connection: OrderConnection
 }
 
-type PostConnectionTitle {
+type OrderGroupBy {
+  _id: [OrderConnection_id]
+  createdAt: [OrderConnectionCreatedAt]
+  updatedAt: [OrderConnectionUpdatedAt]
+  restaurant: [OrderConnectionRestaurant]
+  totale: [OrderConnectionTotale]
+}
+
+input OrderInput {
+  restaurant: ID
+  products: [ID]
+  totale: Float
+}
+
+type Product {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String
+  available: Boolean
+  price: Float
+  order: Order
+}
+
+type ProductAggregator {
+  count: Int
+  sum: ProductAggregatorSum
+  avg: ProductAggregatorAvg
+  min: ProductAggregatorMin
+  max: ProductAggregatorMax
+}
+
+type ProductAggregatorAvg {
+  price: Float
+}
+
+type ProductAggregatorMax {
+  price: Float
+}
+
+type ProductAggregatorMin {
+  price: Float
+}
+
+type ProductAggregatorSum {
+  price: Float
+}
+
+type ProductConnection {
+  values: [Product]
+  groupBy: ProductGroupBy
+  aggregate: ProductAggregator
+}
+
+type ProductConnection_id {
+  key: ID
+  connection: ProductConnection
+}
+
+type ProductConnectionAvailable {
+  key: Boolean
+  connection: ProductConnection
+}
+
+type ProductConnectionCreatedAt {
+  key: DateTime
+  connection: ProductConnection
+}
+
+type ProductConnectionName {
   key: String
-  connection: PostConnection
+  connection: ProductConnection
 }
 
-type PostConnectionUpdatedAt {
+type ProductConnectionOrder {
+  key: ID
+  connection: ProductConnection
+}
+
+type ProductConnectionPrice {
+  key: Float
+  connection: ProductConnection
+}
+
+type ProductConnectionUpdatedAt {
   key: DateTime
-  connection: PostConnection
+  connection: ProductConnection
 }
 
-type PostGroupBy {
-  _id: [PostConnection_id]
-  createdAt: [PostConnectionCreatedAt]
-  updatedAt: [PostConnectionUpdatedAt]
-  title: [PostConnectionTitle]
-  content: [PostConnectionContent]
-  cover: [PostConnectionCover]
+type ProductGroupBy {
+  _id: [ProductConnection_id]
+  createdAt: [ProductConnectionCreatedAt]
+  updatedAt: [ProductConnectionUpdatedAt]
+  name: [ProductConnectionName]
+  available: [ProductConnectionAvailable]
+  price: [ProductConnectionPrice]
+  order: [ProductConnectionOrder]
 }
 
-input PostInput {
-  title: String
-  content: String
-  cover: ID
-  tags: [ID]
+input ProductInput {
+  name: String
+  available: Boolean
+  price: Float
+  order: ID
 }
 
 type Query {
-  post(id: ID!): Post
-  posts(sort: String, limit: Int, start: Int, where: JSON): [Post]
-  postsConnection(sort: String, limit: Int, start: Int, where: JSON): PostConnection
-  tag(id: ID!): Tag
-  tags(sort: String, limit: Int, start: Int, where: JSON): [Tag]
-  tagsConnection(sort: String, limit: Int, start: Int, where: JSON): TagConnection
+  order(id: ID!): Order
+  orders(sort: String, limit: Int, start: Int, where: JSON): [Order]
+  ordersConnection(sort: String, limit: Int, start: Int, where: JSON): OrderConnection
+  product(id: ID!): Product
+  products(sort: String, limit: Int, start: Int, where: JSON): [Product]
+  productsConnection(sort: String, limit: Int, start: Int, where: JSON): ProductConnection
+  restaurant(id: ID!): Restaurant
+  restaurants(sort: String, limit: Int, start: Int, where: JSON): [Restaurant]
+  restaurantsConnection(sort: String, limit: Int, start: Int, where: JSON): RestaurantConnection
   files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
   filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
   role(id: ID!): UsersPermissionsRole
@@ -201,6 +327,106 @@ type Query {
   me: UsersPermissionsMe
 }
 
+type Restaurant {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String
+  address: String
+  min_order: Float
+  image: String
+  order: Order
+}
+
+type RestaurantAggregator {
+  count: Int
+  sum: RestaurantAggregatorSum
+  avg: RestaurantAggregatorAvg
+  min: RestaurantAggregatorMin
+  max: RestaurantAggregatorMax
+}
+
+type RestaurantAggregatorAvg {
+  min_order: Float
+}
+
+type RestaurantAggregatorMax {
+  min_order: Float
+}
+
+type RestaurantAggregatorMin {
+  min_order: Float
+}
+
+type RestaurantAggregatorSum {
+  min_order: Float
+}
+
+type RestaurantConnection {
+  values: [Restaurant]
+  groupBy: RestaurantGroupBy
+  aggregate: RestaurantAggregator
+}
+
+type RestaurantConnection_id {
+  key: ID
+  connection: RestaurantConnection
+}
+
+type RestaurantConnectionAddress {
+  key: String
+  connection: RestaurantConnection
+}
+
+type RestaurantConnectionCreatedAt {
+  key: DateTime
+  connection: RestaurantConnection
+}
+
+type RestaurantConnectionImage {
+  key: String
+  connection: RestaurantConnection
+}
+
+type RestaurantConnectionMin_order {
+  key: Float
+  connection: RestaurantConnection
+}
+
+type RestaurantConnectionName {
+  key: String
+  connection: RestaurantConnection
+}
+
+type RestaurantConnectionOrder {
+  key: ID
+  connection: RestaurantConnection
+}
+
+type RestaurantConnectionUpdatedAt {
+  key: DateTime
+  connection: RestaurantConnection
+}
+
+type RestaurantGroupBy {
+  _id: [RestaurantConnection_id]
+  createdAt: [RestaurantConnectionCreatedAt]
+  updatedAt: [RestaurantConnectionUpdatedAt]
+  name: [RestaurantConnectionName]
+  address: [RestaurantConnectionAddress]
+  min_order: [RestaurantConnectionMin_order]
+  image: [RestaurantConnectionImage]
+  order: [RestaurantConnectionOrder]
+}
+
+input RestaurantInput {
+  name: String
+  address: String
+  min_order: Float
+  image: String
+  order: ID
+}
+
 input RoleInput {
   name: String!
   description: String
@@ -209,63 +435,31 @@ input RoleInput {
   users: [ID]
 }
 
-type Tag {
-  _id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  name: String
-  posts(sort: String, limit: Int, start: Int, where: JSON): [Post]
-}
-
-type TagAggregator {
-  count: Int
-}
-
-type TagConnection {
-  values: [Tag]
-  groupBy: TagGroupBy
-  aggregate: TagAggregator
-}
-
-type TagConnection_id {
-  key: ID
-  connection: TagConnection
-}
-
-type TagConnectionCreatedAt {
-  key: DateTime
-  connection: TagConnection
-}
-
-type TagConnectionName {
-  key: String
-  connection: TagConnection
-}
-
-type TagConnectionUpdatedAt {
-  key: DateTime
-  connection: TagConnection
-}
-
-type TagGroupBy {
-  _id: [TagConnection_id]
-  createdAt: [TagConnectionCreatedAt]
-  updatedAt: [TagConnectionUpdatedAt]
-  name: [TagConnectionName]
-}
-
-input TagInput {
-  name: String
-  posts: [ID]
-}
-
-input updatePostInput {
+input updateOrderInput {
   where: InputID
-  data: PostInput
+  data: OrderInput
 }
 
-type updatePostPayload {
-  post: Post
+type updateOrderPayload {
+  order: Order
+}
+
+input updateProductInput {
+  where: InputID
+  data: ProductInput
+}
+
+type updateProductPayload {
+  product: Product
+}
+
+input updateRestaurantInput {
+  where: InputID
+  data: RestaurantInput
+}
+
+type updateRestaurantPayload {
+  restaurant: Restaurant
 }
 
 input updateRoleInput {
@@ -275,15 +469,6 @@ input updateRoleInput {
 
 type updateRolePayload {
   role: UsersPermissionsRole
-}
-
-input updateTagInput {
-  where: InputID
-  data: TagInput
-}
-
-type updateTagPayload {
-  tag: Tag
 }
 
 input updateUserInput {

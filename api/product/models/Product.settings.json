@@ -13,13 +13,17 @@
       "default": "",
       "type": "string"
     },
-    "available":{
+    "available": {
       "default": "false",
       "type": "boolean"
     },
-    "price":{
+    "price": {
       "default": "0.00",
       "type": "float"
+    },
+    "order": {
+      "model": "order",
+      "via": "products"
     }
   }
 }

@@ -13,22 +13,21 @@
       "default": "",
       "type": "string"
     },
-    "address":{
+    "address": {
       "default": "",
       "type": "string"
     },
-    "min_order":{
+    "min_order": {
       "default": "0.00",
       "type": "float"
     },
-    "image":{
-      "default":"",
-      "type":"string"
+    "image": {
+      "default": "",
+      "type": "string"
     },
-    "products": {
-      "collection": "product",
+    "order": {
+      "model": "order",
       "via": "restaurant"
     }
-
   }
 }

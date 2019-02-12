@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/tags": {
+    "/restaurants": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Tag"
+                    "$ref": "#/components/schemas/Restaurant"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Tag"
+          "Restaurant"
         ],
         "parameters": [
           {
@@ -175,7 +175,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Tag"
+                  "$ref": "#/components/schemas/Restaurant"
                 }
               }
             }
@@ -213,7 +213,7 @@
         },
         "summary": "",
         "tags": [
-          "Tag"
+          "Restaurant"
         ],
         "requestBody": {
           "description": "",
@@ -221,14 +221,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTag"
+                "$ref": "#/components/schemas/NewRestaurant"
               }
             }
           }
         }
       }
     },
-    "/tags/count": {
+    "/restaurants/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -280,12 +280,12 @@
         },
         "summary": "",
         "tags": [
-          "Tag"
+          "Restaurant"
         ],
         "parameters": []
       }
     },
-    "/tags/{_id}": {
+    "/restaurants/{_id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -295,7 +295,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Tag"
+                  "$ref": "#/components/schemas/Restaurant"
                 }
               }
             }
@@ -333,7 +333,7 @@
         },
         "summary": "",
         "tags": [
-          "Tag"
+          "Restaurant"
         ],
         "parameters": [
           {
@@ -357,7 +357,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Tag"
+                  "$ref": "#/components/schemas/Restaurant"
                 }
               }
             }
@@ -395,7 +395,7 @@
         },
         "summary": "",
         "tags": [
-          "Tag"
+          "Restaurant"
         ],
         "requestBody": {
           "description": "",
@@ -403,7 +403,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTag"
+                "$ref": "#/components/schemas/NewRestaurant"
               }
             }
           }
@@ -469,7 +469,7 @@
         },
         "summary": "",
         "tags": [
-          "Tag"
+          "Restaurant"
         ],
         "parameters": [
           {
@@ -488,7 +488,7 @@
   },
   "components": {
     "schemas": {
-      "Tag": {
+      "Restaurant": {
         "required": [
           "id"
         ],
@@ -500,47 +500,62 @@
             "type": "string",
             "default": ""
           },
-          "posts": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
+          "address": {
+            "type": "string",
+            "default": ""
+          },
+          "min_order": {
+            "type": "number",
+            "default": "0.00"
+          },
+          "image": {
+            "type": "string",
+            "default": ""
+          },
+          "order": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "restaurant": {
+                "type": "string"
+              },
+              "products": {
+                "type": "array",
+                "items": {
                   "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "content": {
-                  "type": "string"
-                },
-                "cover": {
-                  "type": "string"
-                },
-                "tags": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 }
+              },
+              "totale": {
+                "type": "number"
               }
             }
           }
         }
       },
-      "NewTag": {
+      "NewRestaurant": {
         "properties": {
           "name": {
             "type": "string",
             "default": ""
           },
-          "posts": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "address": {
+            "type": "string",
+            "default": ""
+          },
+          "min_order": {
+            "type": "number",
+            "default": "0.00"
+          },
+          "image": {
+            "type": "string",
+            "default": ""
+          },
+          "order": {
+            "type": "string"
           }
         }
       }
@@ -548,7 +563,7 @@
   },
   "tags": [
     {
-      "name": "Tag"
+      "name": "Restaurant"
     }
   ]
 }

@@ -1,0 +1,25 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "order",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "restaurant": {
+      "model": "restaurant",
+      "via": "order"
+    },
+    "products": {
+      "collection": "product",
+      "via": "order"
+    },
+    "totale": {
+      "default": "",
+      "type": "float"
+    }
+  }
+}

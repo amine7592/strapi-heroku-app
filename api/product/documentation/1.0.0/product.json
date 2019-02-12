@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/posts": {
+    "/products": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Post"
+                    "$ref": "#/components/schemas/Product"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Product"
         ],
         "parameters": [
           {
@@ -175,7 +175,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Post"
+                  "$ref": "#/components/schemas/Product"
                 }
               }
             }
@@ -213,7 +213,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Product"
         ],
         "requestBody": {
           "description": "",
@@ -221,14 +221,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPost"
+                "$ref": "#/components/schemas/NewProduct"
               }
             }
           }
         }
       }
     },
-    "/posts/count": {
+    "/products/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -280,12 +280,12 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Product"
         ],
         "parameters": []
       }
     },
-    "/posts/{_id}": {
+    "/products/{_id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -295,7 +295,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Post"
+                  "$ref": "#/components/schemas/Product"
                 }
               }
             }
@@ -333,7 +333,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Product"
         ],
         "parameters": [
           {
@@ -357,7 +357,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Post"
+                  "$ref": "#/components/schemas/Product"
                 }
               }
             }
@@ -395,7 +395,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Product"
         ],
         "requestBody": {
           "description": "",
@@ -403,7 +403,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPost"
+                "$ref": "#/components/schemas/NewProduct"
               }
             }
           }
@@ -469,7 +469,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Product"
         ],
         "parameters": [
           {
@@ -488,7 +488,7 @@
   },
   "components": {
     "schemas": {
-      "Post": {
+      "Product": {
         "required": [
           "id"
         ],
@@ -496,99 +496,58 @@
           "id": {
             "type": "string"
           },
-          "title": {
+          "name": {
             "type": "string",
             "default": ""
           },
-          "content": {
-            "type": "string",
-            "default": ""
+          "available": {
+            "type": "boolean",
+            "default": "false"
           },
-          "cover": {
+          "price": {
+            "type": "number",
+            "default": "0.00"
+          },
+          "order": {
             "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
+              "id"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "name": {
+              "restaurant": {
                 "type": "string"
               },
-              "hash": {
-                "type": "string"
-              },
-              "sha256": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "public_id": {
-                "type": "string"
-              },
-              "related": {
-                "type": "string"
-              }
-            }
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
+              "products": {
+                "type": "array",
+                "items": {
                   "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "posts": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 }
+              },
+              "totale": {
+                "type": "number"
               }
             }
           }
         }
       },
-      "NewPost": {
+      "NewProduct": {
         "properties": {
-          "title": {
+          "name": {
             "type": "string",
             "default": ""
           },
-          "content": {
-            "type": "string",
-            "default": ""
+          "available": {
+            "type": "boolean",
+            "default": "false"
           },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "price": {
+            "type": "number",
+            "default": "0.00"
+          },
+          "order": {
+            "type": "string"
           }
         }
       }
@@ -596,7 +555,7 @@
   },
   "tags": [
     {
-      "name": "Post"
+      "name": "Product"
     }
   ]
 }

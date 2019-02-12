@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/24/2018 3:35:56 PM"
+    "x-generation-date": "02/12/2019 11:47:07 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -44,7 +44,7 @@
     }
   ],
   "paths": {
-    "/posts": {
+    "/orders": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -56,7 +56,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Post"
+                    "$ref": "#/components/schemas/Order"
                   }
                 }
               }
@@ -95,7 +95,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Order"
         ],
         "parameters": [
           {
@@ -219,7 +219,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Post"
+                  "$ref": "#/components/schemas/Order"
                 }
               }
             }
@@ -257,7 +257,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Order"
         ],
         "requestBody": {
           "description": "",
@@ -265,14 +265,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPost"
+                "$ref": "#/components/schemas/NewOrder"
               }
             }
           }
         }
       }
     },
-    "/posts/count": {
+    "/orders/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -324,12 +324,12 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Order"
         ],
         "parameters": []
       }
     },
-    "/posts/{_id}": {
+    "/orders/{_id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -339,7 +339,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Post"
+                  "$ref": "#/components/schemas/Order"
                 }
               }
             }
@@ -377,7 +377,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Order"
         ],
         "parameters": [
           {
@@ -401,7 +401,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Post"
+                  "$ref": "#/components/schemas/Order"
                 }
               }
             }
@@ -439,7 +439,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Order"
         ],
         "requestBody": {
           "description": "",
@@ -447,7 +447,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPost"
+                "$ref": "#/components/schemas/NewOrder"
               }
             }
           }
@@ -513,7 +513,7 @@
         },
         "summary": "",
         "tags": [
-          "Post"
+          "Order"
         ],
         "parameters": [
           {
@@ -529,7 +529,7 @@
         ]
       }
     },
-    "/tags": {
+    "/products": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -541,7 +541,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Tag"
+                    "$ref": "#/components/schemas/Product"
                   }
                 }
               }
@@ -580,7 +580,7 @@
         },
         "summary": "",
         "tags": [
-          "Tag"
+          "Product"
         ],
         "parameters": [
           {
@@ -704,7 +704,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Tag"
+                  "$ref": "#/components/schemas/Product"
                 }
               }
             }
@@ -742,7 +742,7 @@
         },
         "summary": "",
         "tags": [
-          "Tag"
+          "Product"
         ],
         "requestBody": {
           "description": "",
@@ -750,14 +750,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTag"
+                "$ref": "#/components/schemas/NewProduct"
               }
             }
           }
         }
       }
     },
-    "/tags/count": {
+    "/products/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -809,12 +809,12 @@
         },
         "summary": "",
         "tags": [
-          "Tag"
+          "Product"
         ],
         "parameters": []
       }
     },
-    "/tags/{_id}": {
+    "/products/{_id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -824,7 +824,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Tag"
+                  "$ref": "#/components/schemas/Product"
                 }
               }
             }
@@ -862,7 +862,7 @@
         },
         "summary": "",
         "tags": [
-          "Tag"
+          "Product"
         ],
         "parameters": [
           {
@@ -886,7 +886,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Tag"
+                  "$ref": "#/components/schemas/Product"
                 }
               }
             }
@@ -924,7 +924,7 @@
         },
         "summary": "",
         "tags": [
-          "Tag"
+          "Product"
         ],
         "requestBody": {
           "description": "",
@@ -932,7 +932,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTag"
+                "$ref": "#/components/schemas/NewProduct"
               }
             }
           }
@@ -998,7 +998,492 @@
         },
         "summary": "",
         "tags": [
-          "Tag"
+          "Product"
+        ],
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/restaurants": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Restaurant"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Restaurant"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Restaurant"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Restaurant"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewRestaurant"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/restaurants/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Restaurant"
+        ],
+        "parameters": []
+      }
+    },
+    "/restaurants/{_id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Restaurant"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Restaurant"
+        ],
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Restaurant"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Restaurant"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewRestaurant"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Restaurant"
         ],
         "parameters": [
           {
@@ -3030,7 +3515,7 @@
   },
   "components": {
     "schemas": {
-      "Post": {
+      "Order": {
         "required": [
           "id"
         ],
@@ -3038,23 +3523,9 @@
           "id": {
             "type": "string"
           },
-          "title": {
-            "type": "string",
-            "default": ""
-          },
-          "content": {
-            "type": "string",
-            "default": ""
-          },
-          "cover": {
+          "restaurant": {
             "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
+              "id"
             ],
             "properties": {
               "id": {
@@ -3063,36 +3534,21 @@
               "name": {
                 "type": "string"
               },
-              "hash": {
+              "address": {
                 "type": "string"
               },
-              "sha256": {
+              "min_order": {
+                "type": "number"
+              },
+              "image": {
                 "type": "string"
               },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "public_id": {
-                "type": "string"
-              },
-              "related": {
+              "order": {
                 "type": "string"
               }
             }
           },
-          "tags": {
+          "products": {
             "type": "array",
             "items": {
               "required": [
@@ -3105,36 +3561,42 @@
                 "name": {
                   "type": "string"
                 },
-                "posts": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                "available": {
+                  "type": "boolean"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "order": {
+                  "type": "string"
                 }
               }
             }
+          },
+          "totale": {
+            "type": "number",
+            "default": ""
           }
         }
       },
-      "NewPost": {
+      "NewOrder": {
         "properties": {
-          "title": {
-            "type": "string",
-            "default": ""
+          "restaurant": {
+            "type": "string"
           },
-          "content": {
-            "type": "string",
-            "default": ""
-          },
-          "tags": {
+          "products": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "totale": {
+            "type": "number",
+            "default": ""
           }
         }
       },
-      "Tag": {
+      "Product": {
         "required": [
           "id"
         ],
@@ -3146,47 +3608,125 @@
             "type": "string",
             "default": ""
           },
-          "posts": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
+          "available": {
+            "type": "boolean",
+            "default": "false"
+          },
+          "price": {
+            "type": "number",
+            "default": "0.00"
+          },
+          "order": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "restaurant": {
+                "type": "string"
+              },
+              "products": {
+                "type": "array",
+                "items": {
                   "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "content": {
-                  "type": "string"
-                },
-                "cover": {
-                  "type": "string"
-                },
-                "tags": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 }
+              },
+              "totale": {
+                "type": "number"
               }
             }
           }
         }
       },
-      "NewTag": {
+      "NewProduct": {
         "properties": {
           "name": {
             "type": "string",
             "default": ""
           },
-          "posts": {
-            "type": "array",
-            "items": {
-              "type": "string"
+          "available": {
+            "type": "boolean",
+            "default": "false"
+          },
+          "price": {
+            "type": "number",
+            "default": "0.00"
+          },
+          "order": {
+            "type": "string"
+          }
+        }
+      },
+      "Restaurant": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "default": ""
+          },
+          "address": {
+            "type": "string",
+            "default": ""
+          },
+          "min_order": {
+            "type": "number",
+            "default": "0.00"
+          },
+          "image": {
+            "type": "string",
+            "default": ""
+          },
+          "order": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "restaurant": {
+                "type": "string"
+              },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "totale": {
+                "type": "number"
+              }
             }
+          }
+        }
+      },
+      "NewRestaurant": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "default": ""
+          },
+          "address": {
+            "type": "string",
+            "default": ""
+          },
+          "min_order": {
+            "type": "number",
+            "default": "0.00"
+          },
+          "image": {
+            "type": "string",
+            "default": ""
+          },
+          "order": {
+            "type": "string"
           }
         }
       },
@@ -3490,10 +4030,13 @@
   },
   "tags": [
     {
-      "name": "Post"
+      "name": "Order"
     },
     {
-      "name": "Tag"
+      "name": "Product"
+    },
+    {
+      "name": "Restaurant"
     },
     {
       "name": "Email"
