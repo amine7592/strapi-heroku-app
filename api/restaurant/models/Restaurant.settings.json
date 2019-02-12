@@ -1,0 +1,34 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "restaurant",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "address":{
+      "default": "",
+      "type": "string"
+    },
+    "min_order":{
+      "default": "0.00",
+      "type": "float"
+    },
+    "image":{
+      "default":"",
+      "type":"string"
+    },
+    "products": {
+      "collection": "product",
+      "via": "restaurant"
+    }
+
+  }
+}

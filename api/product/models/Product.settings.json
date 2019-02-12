@@ -1,0 +1,25 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "product",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "available":{
+      "default": "false",
+      "type": "boolean"
+    },
+    "price":{
+      "default": "0.00",
+      "type": "float"
+    }
+  }
+}
